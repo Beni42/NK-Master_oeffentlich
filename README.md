@@ -1,4 +1,4 @@
-# NK-Master_public
+# NK-Master_oeffentlich
 
 Das ist die öffentliche Version des Programmiercodes. 
 Da die Zugangsdaten für die phpMyAdmin-Seite nicht öffentlich zugänglich sein sollen,
