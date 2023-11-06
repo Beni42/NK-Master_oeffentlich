@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NK-Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+<style>
+    .my_logo{
+        height:40px;
+        width:auto;
+        max-width:500px;
+        margin-right: 15px;
+        margin-top: -12px;
+        margin-left: 15px;
+    }
+</style>
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+        <img src="../static/logo.png" alt="Logo" class="my_logo"><h2 style="display: inline-block;">NK-Master</h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="/">Start</a>
+                <a class="nav-link" href="/theorie">Theorie</a>
+                <a class="nav-link" href="/uebungen">Übungen</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                {% if session['username'] %}
+                <button type="button" class="btn btn-outline-primary me-2" disabled><span class="navbar-text text-primary"><i class="bi bi-person-fill-check"></i> {{ session['username'] }}</span></button>
+                <a class="nav-link" href="/logout">Abmelden</a>
+                {% else %}
+                <a class="nav-link" href="/login">Anmelden</a>
+                <a class="nav-link" href="/register">Registrieren</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

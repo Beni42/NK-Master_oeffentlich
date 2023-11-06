@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .card_img{
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div class="container mt-3">
+    <div class="row text-start my-4">
+        <div class="col-8 offset-2">
+            <h2>Übungen</h2>
+        </div>
+    </div>
+
+    <div class="row text-start my-4">
+        <div class="col-8 offset-2">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 my-4">
+                        <img src="../static/website_images/Chemie_Aufgaben.png" class="img-fluid rounded-start card_img" alt="Alkene/Alkine">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Unverzweigte Kohlenwasserstoffe</h5>
+                            <p class="card-text">Benenne Sturkturformeln von unverzweigten Alkanen, Alkenen und Alkinen.</p>
+                            <p>Schwierigkeitsgrad: Leicht</p>
+                            <a href="uebungen/unverzweigte-kohlenwasserstoffe" class="btn btn-dark">Start</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-start my-4">
+        <div class="col-8 offset-2">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 my-4">
+                        <img src="../static/website_images/Chemie_Aufgaben.png" class="img-fluid rounded-start card_img" alt="Verzweigtes Alkan">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Verzweigte Kohlenwasserstoffe</h5>
+                            <p class="card-text">Benenne Sturkturformeln von verzweigten Alkanen, Alkenen und Alkinen.</p>
+                            <p>Schwierigkeitsgrad: Mittel</p>
+                            <a href="uebungen/verzweigte-kohlenwasserstoffe" class="btn btn-dark">Start</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

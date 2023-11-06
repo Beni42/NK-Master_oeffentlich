@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+    {% block content %}
+<div class="container mt-3">
+    <div class="row g-4">
+        <div class="col-md">
+            <div class="card bg-dark text-light">
+                <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <h3 class="card-title mb-3">Heute</h3>
+                    <p class="card-text">
+                        {{ daily_total }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="card bg-dark text-light">
+                <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-calendar-week"></i>
+                    </div>
+                  <h3 class="card-title mb-3">Diese Woche</h3>
+                  <p class="card-text">
+                      {{ weekly_total }}
+                  </p>
+              </div>
+          </div>
+      </div>
+    <div class="col-md">
+            <div class="card bg-dark text-light">
+                <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                    <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h3 class="card-title mb-3">Allzeit</h3>
+                    <p class="card-text">
+                        {{ general_total }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="card bg-dark text-light">
+                <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-percent"></i>
+                    </div>
+                    <h3 class="card-title mb-3">Erfolgsrate</h3>
+                    <p class="card-text">
+                        {{ daily_rate }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if not session['username'] %}
+    <div class="row text-center">
+        <div class="col mt-4">
+            <div class="alert alert-secondary d-flex align-items-center" role="alert">
+                <div>
+                    <i class="bi bi-info-circle"></i>
+                    Melde dich an oder erstelle zuerst einen Account, um deinen Fortschritt zu speichern.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row my-4">
+        <div class="col-8 offset-2">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Infos zu den Statistiken
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                <b>Heute</b><br>Gibt einem Auskunf darüber, wie viele Aufgaben an diesem Tag gelöst wurden.
+                            </p>
+                            <p>
+                                <b>Diese Woche</b><br>Gibt einem Auskunf darüber, wie viele Aufgaben in den letzten sieben Tagen gelöst wurden.
+                            </p>
+                            <p>
+                                <b>Allzeit</b><br>Gibt einem Auskunf darüber, wie viele Aufgaben man insgesamt gelöst hat.
+                            </p>
+                            <p>
+                                <b>Erfolgsrate</b><br>Gibt einem Auskunft darüber, wie viel % der Aufgaben an diesem Tag richtig gelöst wurden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-8 offset-2">
+            <h4>Über den NK-Master</h4>
+            <br>
+            <p>
+                Der Nomenklatur-Master, kurz NK-Master, ist eine Lernplattform, welche im Rahmen der Maturaarbeit 2023
+                entstanden ist. Der Nomenklatur-Master richtet sich an Gymnasiasten im 3.Schuljahr oder an Lernende,
+                welche noch keine bzw. noch kaum Erfahrung mit der Nomenklatur in der Organischen Chemie haben.
+                Im Theorieabschnitt der Lernplattform kann man die grundlegenden Regeln zur Benennung von organischen
+                Molekülen nach IUPAC lernen und im Übungsabschnitt das Gelernte testen.
+                Neben dem Lerninhalt bietet die Lernplattform ein Authentifikationssystem und hält Angaben zu den
+                Fortschritten des Lernenden fest.
+            </p>
+            <p>
+                Vorraussetzung, um mit dieser Plattform zu üben, ist, dass man die Strukturformeln (grundsätzlich die
+                Skelettformel) versteht und dass man Kenntnisse über die wichtigsten molekularen Bindungsarten besitzt.
+            </p>
+            <p>
+                Ein erfolgreiches Lernerlebnis wünscht dir Benjamin Richter aus der G4G :)
+            </p>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col offset-2">
+            <a href="/quellen">Quellenangaben (Impressum)</a>
+        </div>
+    </div>
+</div>
+    {% endblock %}
