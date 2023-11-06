@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, time
 
 app = Flask(__name__)
 
-app.secret_key = 'just_a_secret_key'
+app.secret_key = 'd9e523fba0ebfeebaafc1a46b2702472a160ebb03c47f4b938b5554272dd536d'
 
 if __name__ == '__main__':
     app.run(debug=True)
